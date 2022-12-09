@@ -1,0 +1,51 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function pulaLinha(){
+        document.write("<br>");
+        document.write("<br>");
+    }
+
+    function mostra(frase){
+        document.write(frase);
+        pulaLinha();
+    }
+
+    function sorteia (n){      
+        return Math.round(Math.random() * n);
+    }
+
+    var numeroPensado = sorteia(10);
+
+    var tentativas = 1;
+
+    mostra("Jogo AdivinHa");
+
+    alert('Jogo AdivinHa!!!');
+    alert('Você só conta com 3 Tentativas!');
+
+    while ( tentativas <= 3){
+
+        var chute = parseInt(prompt( "Digite um numero do 0 ao 10! "));
+        
+        if (chute == numeroPensado){
+            alert('Parabéns, ACERTOU!!');
+            mostra( "O número é : " + numeroPensado + ", Você ACERTOU!!!");
+            break;  /* = tentativas = 4 (Outra Alternativa)*/
+        } else{
+            alert('Você ERROU!');
+            mostra( "O número é : " + numeroPensado + ", Você ERROU!!!, teu chute, nesta tetantiva foi: " + chute );
+        }
+        if(chute > numeroPensado) {
+            alert("Pensa o númeror menor! ao " + chute);
+        } else {
+            alert("Pensa um número Maior! ao " + chute);
+        }
+
+        tentativas ++;
+    }
+    
+    mostra('FIM!!!!')
+
+</script>   
